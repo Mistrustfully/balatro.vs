@@ -1,0 +1,26 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+[[patches]]
+[patches.copy]
+target = "game.lua"
+position = "append"
+sources = [
+    "version.lua",
+]
+
+[[patches]]
+[patches.copy]
+target = "main.lua"
+position = "append"
+sources = [
+    "main.lua"
+]
+
+[[patches]]
+[patches.module]
+source = "util.lua"
+before = "main.lua"
+name = "util"
